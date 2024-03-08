@@ -5,6 +5,8 @@ import Multimedia_element.*;
 public class Main {
     public static void main(String[] args) {
         /*
+         * All'inizio, tutto era in modo statico, per provare che funzionasse la classe
+         * MultimediaElement.
          * System.out.println("IMAGE");
          * System.out.println("---------------------------");
          * Image image = new Image("Carte Siciliane su tela", 100, "png", 50);
@@ -36,7 +38,7 @@ public class Main {
          */
         MultimediaElement[] multimediaElements = new MultimediaElement[0];
         Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("---------------------------");
             System.out.println("Scegli il tipo di file che vuoi creare inserendo un numero tra 1 e 3");
             System.out.println("1. Player");
@@ -104,16 +106,122 @@ public class Main {
             if (num >= 1 && num <= multimediaElements.length) {
                 multimediaElements[num - 1].play();
 
-            } else {
-                System.out.println("Numero non valido.");
+                if (multimediaElements[num - 1] instanceof Player) {
+                    System.out.println("---------------------------");
+                    System.out.println("Vuoi modificare il volume del file? (s/n)");
+                    String volume = scanner.next().toLowerCase();
+                    if (volume.equals("s")) {
+                        System.out.println("---------------------------");
+                        System.out.println("Inserisci + o - per modificare il volume");
+                        String volume1 = scanner.next().toLowerCase();
+                        switch (volume1) {
+                            case "+":
+                                ((Player) multimediaElements[num - 1]).upVolume();
+                                multimediaElements[num - 1].show();
+                                break;
+                            case "-":
+                                ((Player) multimediaElements[num - 1]).downVolume();
+                                multimediaElements[num - 1].show();
+                                break;
+                            default:
+                                System.out.println("Numero non valido.");
+                                break;
+                        }
+                    } else {
+                        System.out.println("---------------------------");
+                        System.out.println("Nessun problema!");
+                        System.out.println("---------------------------");
+                    }
+                } else if (multimediaElements[num - 1] instanceof Video) {
+                    System.out.println("---------------------------");
+                    System.out.println("Vuoi modificare il volume del file? (s/n)");
+                    String volume = scanner.next().toLowerCase();
+                    if (volume.equals("s")) {
+                        System.out.println("---------------------------");
+                        System.out.println("Inserisci + o - per modificare il volume");
+                        String volume1 = scanner.next().toLowerCase();
+                        switch (volume1) {
+                            case "+":
+                                ((Video) multimediaElements[num - 1]).upVolume();
+                                multimediaElements[num - 1].show();
+                                break;
+                            case "-":
+                                ((Video) multimediaElements[num - 1]).downVolume();
+                                multimediaElements[num - 1].show();
+                                break;
+                            default:
+                                System.out.println("Numero non valido.");
+                                break;
+                        }
+                    } else {
+                        System.out.println("---------------------------");
+                        System.out.println("Nessun problema!");
+                        System.out.println("---------------------------");
+                    }
+                    System.out.println("---------------------------");
+                    System.out.println("Vuoi modificare la luminosità del file? (s/n)");
+                    String lum = scanner.next().toLowerCase();
+                    if (lum.equals("s")) {
+                        System.out.println("---------------------------");
+                        System.out.println("Inserisci + o - per modificare il luminosità");
+                        String lum1 = scanner.next().toLowerCase();
+                        switch (lum1) {
+                            case "+":
+                                ((Video) multimediaElements[num - 1]).upBrightness();
+                                multimediaElements[num - 1].show();
+                                break;
+                            case "-":
+                                ((Video) multimediaElements[num - 1]).downBrightness();
+                                multimediaElements[num - 1].show();
+                                break;
+                            default:
+                                System.out.println("Numero non valido.");
+                                break;
+                        }
+                    } else {
+                        System.out.println("---------------------------");
+                        System.out.println("Nessun problema!");
+                        System.out.println("---------------------------");
+                    }
+
+                } else if (multimediaElements[num - 1] instanceof Image) {
+                    System.out.println("---------------------------");
+                    System.out.println("Vuoi modificare la luminosità del file? (s/n)");
+                    String lum = scanner.next().toLowerCase();
+                    if (lum.equals("s")) {
+                        System.out.println("---------------------------");
+                        System.out.println("Inserisci + o - per modificare il luminosità");
+                        String lum1 = scanner.next().toLowerCase();
+                        switch (lum1) {
+                            case "+":
+                                ((Image) multimediaElements[num - 1]).upBrightness();
+                                multimediaElements[num - 1].show();
+                                break;
+                            case "-":
+                                ((Image) multimediaElements[num - 1]).downBrightness();
+                                multimediaElements[num - 1].show();
+                                break;
+                            default:
+                                System.out.println("Numero non valido.");
+                                break;
+                        }
+                    } else {
+                        System.out.println("---------------------------");
+                        System.out.println("Nessun problema!");
+                        System.out.println("---------------------------");
+                    }
+
+                }
+                
+                System.out.println("Vuoi riprodurre un altro file? (s/n)");
+                play = scanner.next().toLowerCase();
             }
-            System.out.println("Vuoi riprodurre un altro file? (s/n)");
-            play = scanner.next().toLowerCase();
         }
         System.out.println("---------------------------");
         System.out.println("HAVE A GOOD DAY");
         System.out.println("---------------------------");
         scanner.close();
+
     }
 
     public static MultimediaElement[] addX(MultimediaElement[] array, MultimediaElement element) {

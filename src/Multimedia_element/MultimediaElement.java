@@ -18,4 +18,10 @@ public abstract class MultimediaElement {
                 ", type: " + type;
     }
 
+    public abstract void upVolume();
+
+    public abstract void downVolume();
+
+    public abstract void show();
+
 }

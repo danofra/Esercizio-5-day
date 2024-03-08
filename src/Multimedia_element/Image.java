@@ -32,4 +32,14 @@ public class Image extends MultimediaElement {
         System.out.println();
         System.out.println("---------------------------");
     }
+
+    @Override
+    public void upVolume() {
+        System.out.println("Non posso aumentare il volume di un'immagine");
+    }
+
+    @Override
+    public void downVolume() {
+        System.out.println("Non posso aumentare il volume di un'immagine");
+    }
 }

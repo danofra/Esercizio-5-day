@@ -34,6 +34,7 @@ public class Player extends MultimediaElement {
 
     }
 
+    
     public void upVolume() {
         this.volume += 10;
     }
