@@ -34,11 +34,11 @@ public class Player extends MultimediaElement {
 
     }
 
-    public void alzaVolume() {
+    public void upVolume() {
         this.volume += 10;
     }
 
-    public void bassaVolume() {
+    public void downVolume() {
         this.volume -= 10;
     }
 

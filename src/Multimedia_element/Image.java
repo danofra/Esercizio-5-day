@@ -1,27 +1,27 @@
 package Multimedia_element;
 
 public class Image extends MultimediaElement {
-    private int luminance;
+    private int brightness;
 
-    public Image(String title, int dimension, String type, int luminance) {
+    public Image(String title, int dimension, String type, int brightness) {
         super(title, dimension, type);
-        this.luminance = luminance;
+        this.brightness = brightness;
     }
 
     public void show() {
         System.out.println("Image: " + title);
         System.out.println("Dimension: " + dimension);
         System.out.println("Type: " + type);
-        System.out.println("Luminance: " + luminance);
+        System.out.println("Brightness: " + brightness);
         System.out.println("---------------------------");
     }
 
-    public void alzaLuminance() {
-        this.luminance += 10;
+    public void upBrightness() {
+        this.brightness += 10;
     }
 
-    public void bassaLuminance() {
-        this.luminance -= 10;
+    public void downBrightness() {
+        this.brightness -= 10;
     }
 
 }
