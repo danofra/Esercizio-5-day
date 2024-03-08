@@ -19,6 +19,17 @@ public class Main {
         player.bassaVolume();
         player.show();
         player.play();
+        System.out.println("VIDEO");
+        System.out.println("---------------------------");
+        Video video = new Video("The Matrix", 100, "mp4", 50, 20, 6);
+        video.show();
+        video.alzaLuminance();
+        video.alzaVolume();
+        video.show();
+        video.bassaLuminance();
+        video.bassaVolume();
+        video.show();
+        video.play();
 
     }
 }
