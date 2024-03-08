@@ -54,12 +54,14 @@ public class Main {
                     String artist = scanner.next();
                     System.out.println("Inserisci il volume del file");
                     int volume = scanner.nextInt();
+                    // aggiungo un WHILE che controlla che il volume sia compreso tra 0 e 100
                     while (volume < 0 || volume > 100) {
                         System.out.println("Inserisci un volume valido compresa tra 0 e 100");
                         volume = scanner.nextInt();
                     }
                     System.out.println("Inserisci la durata del file");
                     int duration = scanner.nextInt();
+                    // aggiungo un WHILE che controlla che la durata sia compresa tra 1 e 100
                     while (duration < 0 || duration > 100) {
                         System.out.println("Inserisci una durata valida compresa tra 1 e 100");
                         duration = scanner.nextInt();
@@ -67,6 +69,7 @@ public class Main {
                     System.out.println("---------------------------");
                     Player player = new Player(title, artist, duration, volume);
                     multimediaElements = addX(multimediaElements, player);
+                    // inserisco un nuovo elemento nell' array multimediaElements
                     for (MultimediaElement element : multimediaElements) {
                         System.out.println(element.toString());
                     }
@@ -76,18 +79,21 @@ public class Main {
                     String title1 = scanner.next();
                     System.out.println("Inserisci la luminosità del file");
                     int brightness1 = scanner.nextInt();
+                    // aggiungo un WHILE che controlla che la luminosità sia compresa tra 0 e 100
                     while (brightness1 < 0 || brightness1 > 100) {
                         System.out.println("Inserisci una luminosità valida compresa tra 0 e 100");
                         brightness1 = scanner.nextInt();
                     }
                     System.out.println("Inserisci il volume del file");
                     int volume1 = scanner.nextInt();
+                    // aggiungo un WHILE che controlla che il volume sia compreso tra 0 e 100
                     while (volume1 < 0 || volume1 > 100) {
                         System.out.println("Inserisci un volume valida compresa tra 0 e 100");
                         volume1 = scanner.nextInt();
                     }
                     System.out.println("Inserisci la durata del file");
                     int duration1 = scanner.nextInt();
+                    // aggiungo un WHILE che controlla che la durata sia compresa tra 1 e 100
                     while (duration1 < 1 || duration1 > 100) {
                         System.out.println("Inserisci una durata valida compresa tra 1 e 100");
                         duration1 = scanner.nextInt();
@@ -95,6 +101,7 @@ public class Main {
                     System.out.println("---------------------------");
                     Video video = new Video(title1, duration1, brightness1, volume1);
                     multimediaElements = addX(multimediaElements, video);
+                    // inserisco un nuovo elemento nell' array multimediaElements
                     for (MultimediaElement element : multimediaElements) {
                         System.out.println(element.toString());
                     }
@@ -105,6 +112,7 @@ public class Main {
                     String title2 = scanner.next();
                     System.out.println("Inserisci la luminosità del file");
                     int brightness2 = scanner.nextInt();
+                    // aggiungo un WHILE che controlla che la luminosità sia compresa tra 0 e 100
                     while (brightness2 < 0 || brightness2 > 100) {
                         System.out.println("Inserisci una luminosità valida compresa tra 0 e 100");
                         brightness2 = scanner.nextInt();
@@ -112,6 +120,7 @@ public class Main {
                     System.out.println("---------------------------");
                     Image image = new Image(title2, brightness2);
                     multimediaElements = addX(multimediaElements, image);
+                    // inserisco un nuovo elemento nell' array multimediaElements
                     for (MultimediaElement element : multimediaElements) {
                         System.out.println(element.toString());
                     }
@@ -129,7 +138,8 @@ public class Main {
             int num = scanner.nextInt();
             if (num >= 1 && num <= multimediaElements.length) {
                 multimediaElements[num - 1].play();
-
+                // controllo che il file sia un video, player o image per modificare i
+                // rispettivi volumi o luminosità
                 if (multimediaElements[num - 1] instanceof Player) {
                     System.out.println("---------------------------");
                     System.out.println("Vuoi modificare il volume del file? (s/n)");
@@ -238,6 +248,7 @@ public class Main {
                 }
 
                 System.out.println("Vuoi riprodurre un altro file? (s/n)");
+                System.out.println("Attenzione! Digitando n si esce dall'applicazione");
                 play = scanner.next().toLowerCase();
             }
         }
