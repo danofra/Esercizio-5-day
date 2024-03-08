@@ -2,10 +2,12 @@ import Multimedia_element.*;
 
 public class Main {
     public static void main(String[] args) {
-        Image image = new Image("Asso di mazza", 100, "png");
-        Image image1 = new Image("Asso di coppe", 50, "jpg");
+        Image image = new Image("Asso di mazza", 100, "png", 10);
         image.show();
-        image1.show();
+        image.alzaLuminance();
+        image.show();
+        image.bassaLuminance();
+        image.show();
 
     }
 }
