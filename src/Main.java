@@ -38,7 +38,7 @@ public class Main {
          */
         MultimediaElement[] multimediaElements = new MultimediaElement[0];
         Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println("---------------------------");
             System.out.println("Scegli il tipo di file che vuoi creare inserendo un numero tra 1 e 3");
             System.out.println("1. Player");
