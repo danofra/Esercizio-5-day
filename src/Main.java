@@ -34,14 +34,15 @@ public class Main {
          * video.show();
          * video.play();
          */
-        for (int i = 0; i < 5; i++) {
+        MultimediaElement[] multimediaElements = new MultimediaElement[0];
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 1; i++) {
             System.out.println("---------------------------");
             System.out.println("Scegli il tipo di file che vuoi creare inserendo un numero tra 1 e 3");
             System.out.println("1. Player");
             System.out.println("2. Video");
             System.out.println("3. Image");
             System.out.println("---------------------------");
-            Scanner scanner = new Scanner(System.in);
             int file = scanner.nextInt();
             switch (file) {
                 case 1:
@@ -55,8 +56,10 @@ public class Main {
                     int duration = scanner.nextInt();
                     System.out.println("---------------------------");
                     Player player = new Player(title, artist, duration, volume);
-                    player.show();
-                    scanner.close();
+                    multimediaElements = addX(multimediaElements, player);
+                    for (MultimediaElement element : multimediaElements) {
+                        System.out.println(element.toString());
+                    }
                     break;
                 case 2:
                     System.out.println("Inserisci il nome del video");
@@ -69,8 +72,11 @@ public class Main {
                     int duration1 = scanner.nextInt();
                     System.out.println("---------------------------");
                     Video video = new Video(title1, duration1, brightness1, volume1);
-                    video.show();
-                    scanner.close();
+                    multimediaElements = addX(multimediaElements, video);
+                    for (MultimediaElement element : multimediaElements) {
+                        System.out.println(element.toString());
+                    }
+
                     break;
                 case 3:
                     System.out.println("Inserisci il nome dell' immagine");
@@ -79,14 +85,43 @@ public class Main {
                     int brightness2 = scanner.nextInt();
                     System.out.println("---------------------------");
                     Image image = new Image(title2, brightness2);
-                    image.show();
-                    scanner.close();
+                    multimediaElements = addX(multimediaElements, image);
+                    for (MultimediaElement element : multimediaElements) {
+                        System.out.println(element.toString());
+                    }
+
                     break;
                 default:
                     System.out.println("Non è stato inserito un numero valido");
                     break;
             }
-
         }
+        String play = "s";
+        while (play.equals("s")) {
+            System.out.println(
+                    "Inserisci il numero del file che vuoi riprodurre (da 1 a " + multimediaElements.length + "):");
+            int num = scanner.nextInt();
+            if (num >= 1 && num <= multimediaElements.length) {
+                multimediaElements[num - 1].play();
+
+            } else {
+                System.out.println("Numero non valido.");
+            }
+            System.out.println("Vuoi riprodurre un altro file? (s/n)");
+            play = scanner.next().toLowerCase();
+        }
+        System.out.println("---------------------------");
+        System.out.println("HAVE A GOOD DAY");
+        System.out.println("---------------------------");
+        scanner.close();
+    }
+
+    public static MultimediaElement[] addX(MultimediaElement[] array, MultimediaElement element) {
+        MultimediaElement[] newArray = new MultimediaElement[array.length + 1];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i];
+        }
+        newArray[array.length] = element;
+        return newArray;
     }
 }

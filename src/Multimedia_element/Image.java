@@ -6,6 +6,7 @@ public class Image extends MultimediaElement {
     public Image(String title, int brightness) {
         super(title);
         this.brightness = brightness;
+        this.type = TypeOfMedia.IMAGE;
     }
 
     public void show() {
@@ -22,4 +23,13 @@ public class Image extends MultimediaElement {
         this.brightness -= 10;
     }
 
+    @Override
+    public void play() {
+        System.out.print(title + " " + "Brightness" + " ");
+        for (int k = 0; k < brightness; k++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        System.out.println("---------------------------");
+    }
 }

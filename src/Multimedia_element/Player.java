@@ -1,5 +1,6 @@
 package Multimedia_element;
 
+
 public class Player extends MultimediaElement {
     private int volume;
     private String artist;
@@ -10,6 +11,7 @@ public class Player extends MultimediaElement {
         this.volume = volume;
         this.artist = artist;
         this.duration = duration;
+        this.type = TypeOfMedia.PLAYER;
     }
 
     public void show() {

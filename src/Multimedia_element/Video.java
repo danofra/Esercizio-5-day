@@ -1,5 +1,6 @@
 package Multimedia_element;
 
+
 public class Video extends MultimediaElement {
     private int brightness;
     private int volume;
@@ -10,6 +11,7 @@ public class Video extends MultimediaElement {
         this.brightness = brightness;
         this.volume = volume;
         this.duration = duration;
+        this.type = TypeOfMedia.VIDEO;
     }
 
     public void show() {
