@@ -54,13 +54,13 @@ public class Main {
                     String artist = scanner.next();
                     System.out.println("Inserisci il volume del file");
                     int volume = scanner.nextInt();
-                    if (volume < 0 || volume > 100) {
+                    while (volume < 0 || volume > 100) {
                         System.out.println("Inserisci un volume valido compresa tra 0 e 100");
                         volume = scanner.nextInt();
                     }
                     System.out.println("Inserisci la durata del file");
                     int duration = scanner.nextInt();
-                    if (duration < 0 || duration > 100) {
+                    while (duration < 0 || duration > 100) {
                         System.out.println("Inserisci una durata valida compresa tra 1 e 100");
                         duration = scanner.nextInt();
                     }
@@ -76,19 +76,19 @@ public class Main {
                     String title1 = scanner.next();
                     System.out.println("Inserisci la luminosità del file");
                     int brightness1 = scanner.nextInt();
-                    if (brightness1 < 0 || brightness1 > 100) {
+                    while (brightness1 < 0 || brightness1 > 100) {
                         System.out.println("Inserisci una luminosità valida compresa tra 0 e 100");
                         brightness1 = scanner.nextInt();
                     }
                     System.out.println("Inserisci il volume del file");
                     int volume1 = scanner.nextInt();
-                    if (volume1 < 0 || volume1 > 100) {
+                    while (volume1 < 0 || volume1 > 100) {
                         System.out.println("Inserisci un volume valida compresa tra 0 e 100");
                         volume1 = scanner.nextInt();
                     }
                     System.out.println("Inserisci la durata del file");
                     int duration1 = scanner.nextInt();
-                    if (duration1 < 1 || duration1 > 100) {
+                    while (duration1 < 1 || duration1 > 100) {
                         System.out.println("Inserisci una durata valida compresa tra 1 e 100");
                         duration1 = scanner.nextInt();
                     }
@@ -105,7 +105,7 @@ public class Main {
                     String title2 = scanner.next();
                     System.out.println("Inserisci la luminosità del file");
                     int brightness2 = scanner.nextInt();
-                    if (brightness2 < 0 || brightness2 > 100) {
+                    while (brightness2 < 0 || brightness2 > 100) {
                         System.out.println("Inserisci una luminosità valida compresa tra 0 e 100");
                         brightness2 = scanner.nextInt();
                     }
