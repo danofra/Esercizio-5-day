@@ -5,8 +5,8 @@ public class Player extends MultimediaElement {
     private String artist;
     private int duration;
 
-    public Player(String title, int dimension, String type, int volume, String artist, int duration) {
-        super(title, dimension, type);
+    public Player(String title, String artist, int duration, int volume) {
+        super(title);
         this.volume = volume;
         this.artist = artist;
         this.duration = duration;
@@ -15,8 +15,6 @@ public class Player extends MultimediaElement {
     public void show() {
         System.out.println("Player: " + title);
         System.out.println("Artist: " + artist);
-        System.out.println("Dimension: " + dimension);
-        System.out.println("Type: " + type);
         System.out.println("Duration: " + duration);
         System.out.println("Volume: " + volume);
         System.out.println("---------------------------");

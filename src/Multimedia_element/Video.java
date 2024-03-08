@@ -5,8 +5,8 @@ public class Video extends MultimediaElement {
     private int volume;
     private int duration;
 
-    public Video(String title, int dimension, String type, int brightness, int volume, int duration) {
-        super(title, dimension, type);
+    public Video(String title, int duration, int brightness, int volume) {
+        super(title);
         this.brightness = brightness;
         this.volume = volume;
         this.duration = duration;
@@ -14,10 +14,9 @@ public class Video extends MultimediaElement {
 
     public void show() {
         System.out.println("Video: " + title);
-        System.out.println("Dimension: " + dimension);
-        System.out.println("Type: " + type);
-        System.out.println("brightness: " + brightness);
+        System.out.println("Brightness: " + brightness);
         System.out.println("Volume: " + volume);
+        System.out.println("Duration: " + duration);
         System.out.println("---------------------------");
     }
 
