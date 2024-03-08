@@ -1,7 +1,7 @@
 package Multimedia_element;
 
 public class Image extends MultimediaElement {
-    int luminance;
+    private int luminance;
 
     public Image(String title, int dimension, String type, int luminance) {
         super(title, dimension, type);
@@ -14,7 +14,6 @@ public class Image extends MultimediaElement {
         System.out.println("Type: " + type);
         System.out.println("Luminance: " + luminance);
         System.out.println("---------------------------");
-
     }
 
     public void alzaLuminance() {
